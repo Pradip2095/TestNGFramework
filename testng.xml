@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="GroupingTest">
 
-        <groups>
-            <run>
-                <exclude name = "sanity"/>
-                <include name = "regression"/>
-            </run>
-
-        </groups>
-
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
+    <test name="parametertest">
         <classes>
-            <class name="GroupingExample"></class>
+            <class name="ParametersExample"></class>
         </classes>
 
     </test>
