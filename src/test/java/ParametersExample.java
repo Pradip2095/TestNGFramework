@@ -17,6 +17,23 @@ public class ParametersExample {
     private static final Logger log = LoggerFactory.getLogger(AssertionExample.class);
     WebDriver driver;
 
+    /*<suite name="CrossBrowserSuite">
+
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>*/
     @BeforeClass
     @Parameters({"browser", "url"})
     public void setup(String browser, String app) throws InterruptedException {
