@@ -2,9 +2,9 @@
     <listeners>
         <listener class-name="orangehrm.listeners.TestListener"/>
     </listeners>
-    <test name="Login tests">
+    <test name="OrangeHRM Login tests">
         <packages>
-            <package name="tests"/>
+            <package name="orangehrm.tests"/>
         </packages>
     </test>
 </suite>
