@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="classes" thread-count = "2">
-    <test name ="paralleltests">
-
-        <classes>
-
-        </classes>
-
+<suite name="Regression">
+    <listeners>
+        <listener class-name="orangehrm.listeners.TestListener"/>
+    </listeners>
+    <test name="Login tests">
+        <packages>
+            <package name="tests"/>
+        </packages>
     </test>
 </suite>
