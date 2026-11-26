@@ -1,0 +1,69 @@
+package OrangeHRM_Project.tests;
+
+import OrangeHRM_Project.base.TestBase;
+import OrangeHRM_Project.page.DashboardPage;
+import OrangeHRM_Project.page.LoginPage;
+import OrangeHRM_Project.utils.ConfigReader;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class LoginTest extends TestBase {
+
+    private LoginPage loginPage;
+    private DashboardPage dashboardPage;
+
+    @BeforeMethod
+    public void initializeLoginPage() {
+        // TestBase.setUp() runs first and creates the driver for this test.
+        loginPage = new LoginPage(driver);
+        dashboardPage = new DashboardPage(driver);
+    }
+
+    @Test(priority = 1)
+    public void validLogin() {
+        loginPage.login(ConfigReader.get("username"), ConfigReader.get("password"));
+        Assert.assertTrue(driver.getTitle().contains("OrangeHRM"));
+        log.info("Login is successful.");
+    }
+
+    @Test(priority = 2)
+    public void invalidUsername() {
+        //Wrong Username & Correct password
+        loginPage.login("Test123", "admin123");
+        Assert.assertEquals(
+                loginPage.verifyInvalidUsername(),
+                "Invalid credentials",
+                "Invalid Credentials message is not present when entered wrong username.");
+
+    }
+
+    @Test(priority = 3)
+    public void invalidPassword() {
+        //correct username & wrong password
+        loginPage.login(ConfigReader.get("username"), "admin225");
+        Assert.assertEquals(
+                loginPage.verifyInvalidUsername(),
+                "Invalid credentials",
+                "Invalid Credentials message is not present when entered wrong password.");
+
+    }
+
+    @Test(priority = 4)
+    public void invalidUserNameAndPassword() {
+        //Wrong username & Wrong Password
+        loginPage.login("Test123", "aadmin123");
+        Assert.assertEquals(
+                loginPage.verifyInvalidUsername(),
+                "Invalid credentials",
+                "Invalid Credentials message is not present when entered wrong username & password.");
+    }
+
+    @Test
+    public void verifyDashBoardPage() {
+        loginPage.login(ConfigReader.get("username"), ConfigReader.get("password"));
+        dashboardPage.verifyDashboardPage();
+        dashboardPage.verifyQuickLaunchOptions();
+    }
+}
+

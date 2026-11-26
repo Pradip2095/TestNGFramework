@@ -1,4 +1,4 @@
-package SelfHealingLocator;
+package TestNG_Practice.SelfHealingLocator;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

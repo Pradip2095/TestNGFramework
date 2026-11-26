@@ -1,3 +1,5 @@
+package TestNG_Practice;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 
 public class ParametersExample {
 
@@ -22,14 +23,14 @@ public class ParametersExample {
     <test name="ChromeTest">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.tests.LoginTest"/>
+            <class name="com.tests.Practice.LoginTest"/>
         </classes>
     </test>
 
     <test name="FirefoxTest">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="com.tests.LoginTest"/>
+            <class name="com.tests.Practice.LoginTest"/>
         </classes>
     </test>
 

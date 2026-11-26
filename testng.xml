@@ -4,8 +4,7 @@
     <test name ="paralleltests">
 
         <classes>
-            <class name = "ParallelTestExample.ParallelTest1"/>
-            <class name = "ParallelTestExample.ParallelTest2"/>
+
         </classes>
 
     </test>

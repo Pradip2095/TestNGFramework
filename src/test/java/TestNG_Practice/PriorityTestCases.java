@@ -1,3 +1,5 @@
+package TestNG_Practice;
+
 import org.testng.annotations.Test;
 
 public class PriorityTestCases {

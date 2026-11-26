@@ -1,3 +1,5 @@
+package TestNG_Practice;
+
 import org.testng.annotations.DataProvider;
 
 public class CustomDataProvider {

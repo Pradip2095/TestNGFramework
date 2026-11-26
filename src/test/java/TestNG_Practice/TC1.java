@@ -1,9 +1,21 @@
+package TestNG_Practice;
+
 import org.testng.annotations.*;
 
-public class TC2 {
+public class TC1 {
+
+    @BeforeTest
+    void beforeTest(){
+        System.out.println("this is before test");
+    }
+
+    @AfterTest
+    void afterTest(){
+        System.out.println("this is after test");
+    }
 
     @BeforeClass
-    void beforeClass(){
+   void beforeClass(){
         System.out.println("this is before class");
     }
 
@@ -23,23 +35,12 @@ public class TC2 {
     }
 
     @Test
-    public void test3(){
-        System.out.println("this is test 3");
+    public void test1(){
+        System.out.println("this is test 1");
     }
 
     @Test
-    public void test4(){
-        System.out.println("this is test 4");
-    }
-
-
-    @BeforeSuite
-    void beforeSuit(){
-        System.out.println("this is before suit method");
-    }
-
-    @AfterSuite
-    void afterSuit(){
-        System.out.println("this is before suit method");
+    public void test2(){
+        System.out.println("this is test 2");
     }
 }
