@@ -2,7 +2,7 @@
     <listeners>
         <listener class-name="orangehrm.listeners.TestListener"/>
     </listeners>
-    <test name="OrangeHRM Login tests">
+    <test name="OrangeHRM Test" parallel = "tests" Thread-count ="2">
         <packages>
             <package name="orangehrm.tests"/>
         </packages>

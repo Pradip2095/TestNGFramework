@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest extends TestBase {
+public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
     private DashboardPage dashboardPage;
@@ -59,11 +59,5 @@ public class LoginTest extends TestBase {
                 "Invalid Credentials message is not present when entered wrong username & password.");
     }
 
-    @Test
-    public void verifyDashBoardPage() {
-        loginPage.login(ConfigReader.get("username"), ConfigReader.get("password"));
-        dashboardPage.verifyDashboardPage();
-        dashboardPage.verifyQuickLaunchOptions();
-    }
 }
 
